@@ -3561,7 +3561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da718c410dc3f845b775b8ac87e1e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Explosion: {fileID: 7354695869903840038, guid: 8d03efb8852445040b36a90d33f0f5c6, type: 3}
+  Explosion: {fileID: 0}
   Muzzle: {fileID: 591539269}
 --- !u!4 &6983258930626336602
 Transform:
