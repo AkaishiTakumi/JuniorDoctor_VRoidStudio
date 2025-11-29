@@ -19,17 +19,14 @@ public class GunRay: MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))//③マウスが左クリックされたら 
         {
-            Debug.Log("クリックされたよ");
             Ray ray = new Ray(Muzzle.transform.position, Muzzle.transform.forward);//③RayをMuzzleの場所から前方に飛ばす
             //Ray ray = new Ray(transform.position, transform.forward);//③Rayをこの場所から前方に飛ばす
             Debug.DrawRay(ray.origin, ray.direction, Color.red);//③Rayを赤色で表示させる
 
             if (Physics.Raycast(ray, out hit, distance))
             {//③Rayがdistanceの範囲内で何かに当たった時に
-                Debug.Log("Rayが当たったよ");
                 if (hit.collider.tag == "Enemy")//③もし当たった物のタグがEnemyだったら 
                 {
-                    Debug.Log("敵に当たったよ");
                     Destroy(hit.collider.gameObject);//③当たった物を消去して、
                     Instantiate(Explosion.gameObject, hit.collider.gameObject.transform.position, gameObject.transform.rotation);//③Rayが当たった場所に爆発を生成する
                 }
